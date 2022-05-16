@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+
+import Map from './components/Map';
+import Login from './components/Login';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [userAddress, setUserAddress] = useState('');
+
+  useEffect(() => {
+    (async () => {
+      if ((window as any).ethereum) {
+        const accounts = await (window as any).ethereum.request({
+          method: 'eth_accounts',
+        });
+
+        if (accounts.length > 0) {
+          setUserAddress(accounts[0]);
+        }
+      }
+    })();
+  }, []);
+
+  return userAddress ? (
+    <Map />
+  ) : (
+    <Login
+      login={async () => {
+        if (!(window as any).ethereum) {
+          alert('Get MetaMask!');
+          return;
+        }
+
+        const accounts = await (window as any).ethereum.request({
+          method: 'eth_requestAccounts',
+        });
+
+        setUserAddress(accounts[0]);
+      }}
+    />
   );
 }
 
