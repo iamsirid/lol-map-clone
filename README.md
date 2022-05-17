@@ -37,8 +37,7 @@ https://guildfi-assignment-fhiz6sqwb-iamsirid.vercel.app/
 
 ## Project Walkthrough
 
-หน้าแรกจะพบ!
-กับส่วนของการ login ด้วย MetaMask
+หน้าแรกจะพบกับส่วนของการ login ด้วย MetaMask
 
 ![](https://user-images.githubusercontent.com/6850971/168804269-96e013dc-46a4-48e6-89fa-64985f2d92e6.png)
 
