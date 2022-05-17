@@ -542,3 +542,9 @@ interface CityIconProps {
 ![](https://user-images.githubusercontent.com/6850971/168805583-e2d4908e-2dca-453e-8fa1-90a7b450c0d4.png)
 
 จะเห็นว่า name ของ cityInfo จะถูกเอามาใช้เป็นชื่อไฟล์ของ icon ด้วย และ onClick จะเป็นการ setState selectedCity โดยส่ง cityInfo ทั้งก้อนเข้าไปเพื่อใช้แสดงใน RightSidebar
+
+## Known Bug
+
+เมื่อ zoom จะเห็นว่า city overlay จะดูกระตุกไม่อยู่กับที่ หรือเวลา pan ในขณะที่ zoom เข้าอยู่ก็จะเป็นเช่นกัน คาดว่าเกิดจากการที่ camera rotate ตอน zoom แต่ยังหาสาเหตุที่แน่ชัดไม่เจอจริงยังไม่สามารถแก้ไขได้
+
+![](https://user-images.githubusercontent.com/6850971/168818870-9b9e8916-e208-41b3-89b6-edca110a96fe.gif)
