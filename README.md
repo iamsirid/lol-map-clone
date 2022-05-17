@@ -468,4 +468,42 @@ ref: https://r105.threejsfundamentals.org/threejs/lessons/threejs-align-html-ele
 
 ![hold](./doc/35.png)
 
-ส่วนนี้จะเป็นการ trigger slide in CSS Animation โดยการ add class open ให้ RightSidebar
+ส่วนนี้จะเป็นการ trigger slide in CSS Animation โดยการ add class open ให้ RightSidebar โดย logic ของการ set selectedCity state จะอยู่กับ CityIcon component
+
+![hold](./doc/gif9.gif)
+
+### CityIcon Component
+
+![hold](./doc/36.png)
+
+ใน CityIcon.tsx (components/CityIcon.tsx) จะ render ส่วนของ icon city และ label city
+
+![hold](./doc/37.png)
+
+โดย icon จะมี version ปกติและ version hover เมื่อเอา cursor ไปวางทับ
+
+![hold](./doc/gif10.gif)
+
+โดยจะรับ props ดังนี้
+
+```
+interface CityIconProps {
+  label: string;
+  icon: string;
+  hoverIcon: string;
+  onClick: () => void;
+  sideLabel?: boolean;
+}
+```
+
+- label คือ string สำหรับแสดง label ด้านล่างหรือด้านข้าง icon
+- icon คือ string ชื่อไฟล์รูป icon ที่อยู่ใน public folder
+- hoverIcon คือ string ชื่อรูป icon เวอร์ชั่น hover ที่อยู่ใน public folder
+- onClick คือ callback function เมื่อตัว component ถูก click
+- sideLabel คือ boolean บอกว่าให้แสดง label ด้านข้างแทนด้านล่างดังตัวอย่างที่เคยกล่าวไปข้างต้น
+
+โดย CityIcon จะถูกเรียกจาก Map components โดยเป็นการ map จาก array data ของ citiesInfo แล้วส่ง props มาดังนี้
+
+![hold](./doc/38.png)
+
+จะเห็นว่า name ของ cityInfo จะถูกเอามาใช้เป็นชื่อไฟล์ของ icon ด้วย และ onClick จะเป็นการ setState selectedCity โดยส่ง cityInfo ทั้งก้อนเข้าไปเพื่อใช้แสดงใน RightSidebar
