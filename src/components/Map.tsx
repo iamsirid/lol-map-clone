@@ -278,21 +278,14 @@ const Map: React.FC = () => {
       scene.add(gltf.scene);
     });
 
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+    });
+
     const sizes = {
       width: window.innerWidth,
       height: window.innerHeight,
     };
-
-    window.addEventListener('resize', () => {
-      sizes.width = window.innerWidth;
-      sizes.height = window.innerHeight;
-
-      camera.aspect = sizes.width / sizes.height;
-      camera.updateProjectionMatrix();
-
-      renderer.setSize(sizes.width, sizes.height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    });
 
     const camera = new THREE.PerspectiveCamera(
       50,
@@ -307,17 +300,24 @@ const Map: React.FC = () => {
 
     scene.add(camera);
 
+    window.addEventListener('resize', () => {
+      sizes.width = window.innerWidth;
+      sizes.height = window.innerHeight;
+
+      camera.aspect = sizes.width / sizes.height;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(sizes.width, sizes.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    });
+
     const controls = new OrbitControls(camera, canvas);
-    controls.enableDamping = false;
     controls.mouseButtons = {
       LEFT: THREE.MOUSE.PAN,
       MIDDLE: THREE.MOUSE.DOLLY,
       RIGHT: THREE.MOUSE.PAN,
     };
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvas,
-    });
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
