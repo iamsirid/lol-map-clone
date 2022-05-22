@@ -444,7 +444,7 @@ controls.update();
 
 ![](https://user-images.githubusercontent.com/6850971/168805477-74fd1852-fde8-444c-a96d-e697c0360656.png)
 
-โดย Math.PI _ 0.5 คือ 1/4 รอบ เนื่องจาก rotation คำนวณแบบ euler หน่วย radian โดย 1 รอบคือ Math.PI _ 2 เพราะฉะนั้น Math.PI \* 0.5 คือ 1/4 รอบ ส่วน ลบด้านหน้าคือให้หมุนไปในทิศตามเข็มถ้ามองจากทิศตามรูป
+โดย Math.PI \* 0.5 คือ 1/4 รอบ เนื่องจาก rotation คำนวณแบบ euler หน่วย radian โดย 1 รอบคือ Math.PI \* 2 เพราะฉะนั้น Math.PI \* 0.5 คือ 1/4 รอบ ส่วน ลบด้านหน้าคือให้หมุนไปในทิศตามเข็มถ้ามองจากทิศตามรูป
 
 ![](https://user-images.githubusercontent.com/6850971/168805482-ad3f9c9c-a52f-44b2-903a-4fb5caab450f.png)
 
