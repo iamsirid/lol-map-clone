@@ -1,8 +1,6 @@
-# GuildFi Assignment
+# LOL Map Clone
 
-Repository นี้เป็นส่วนหนึ่งของ GuildFi Assignment สำหรับ Job Interview
-
-โดยเป็นการ Clone map ของเกม League of legends https://map.leagueoflegends.com/ โดยใช้ React, Three.js และ MetaMask (ในการทำ auth)
+Repository นี้เป็นการ Clone map ของเกม League of legends https://map.leagueoflegends.com/ โดยใช้ React, Three.js และ MetaMask (ในการทำ auth)
 
 ## How to run
 
@@ -33,7 +31,7 @@ serve -s build
 
 project นี้ได้ทำการ deployed บน Vercel ไว้แล้ว
 
-https://guildfi-assignment-fhiz6sqwb-iamsirid.vercel.app/
+https://lol-map-clone.vercel.app/
 
 ## Project Walkthrough
 

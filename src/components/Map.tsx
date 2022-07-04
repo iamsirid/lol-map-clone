@@ -272,9 +272,13 @@ const Map: React.FC = () => {
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
     gltfLoader.load('my-terrian.glb', (gltf) => {
-      gltf.scene.traverse((child: any) => {
-        child.material = material;
-      });
+      // gltf.scene.traverse((child: any) => {
+      //   child.material = material;
+      // });
+
+      (gltf.scene.children[1] as any).material = material;
+
+      console.log(gltf);
       scene.add(gltf.scene);
     });
 
